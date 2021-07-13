@@ -1,6 +1,6 @@
 spring:
   application:
-    name: withdrawal-service
+    name: micro-withdrawal
   cloud:
     config:
 #      uri: http://localhost:8081

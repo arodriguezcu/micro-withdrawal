@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    container_name: withdrawal-service
+    container_name: micro-withdrawal
     restart: always
     build: .
     ports:
