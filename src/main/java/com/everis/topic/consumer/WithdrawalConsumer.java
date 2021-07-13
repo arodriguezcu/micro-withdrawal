@@ -82,4 +82,19 @@ public class WithdrawalConsumer {
   
   }
   
+  /** Consume del topico transaction. */
+  @KafkaListener(topics = "created-wallet-withdrawal-topic", groupId = "withdrawal-group")
+  public Disposable retrieveCreatedWalletWithdrawal(String data) throws JsonProcessingException {
+  
+    Withdrawal withdrawal = objectMapper.readValue(data, Withdrawal.class);
+  
+    withdrawalProducer.sendWithdrawalAccountTopic(withdrawal); 
+    
+    return Mono.just(withdrawal)
+      .log()
+      .flatMap(withdrawalService::update)
+      .subscribe();
+  
+  }
+  
 }

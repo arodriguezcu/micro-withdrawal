@@ -12,9 +12,9 @@
   </parent>
   
   <groupId>com.everis</groupId>
-  <artifactId>withdrawal-service</artifactId>
+  <artifactId>micro-withdrawal</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>withdrawal-service</name>
+  <name>micro-withdrawal</name>
   <description>Microservicio para retiros</description>
   
   <properties>
